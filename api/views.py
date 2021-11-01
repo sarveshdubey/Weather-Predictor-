@@ -12,7 +12,8 @@ def post(request):
   if request.method=="POST":
     lat = request.POST['lat']
     lon = request.POST['lon']
-    url ='http://api.openweathermap.org/data/2.5/weather?lat={}&lon={}&appid=a9faf74cd113de4e5d249308e52bd6cb'.format(lat,lon)
+    apiid = ''
+    url ='http://api.openweathermap.org/data/2.5/weather?lat={}&lon={}&appid={}'.format(lat,lon,apiid)
     r = requests.get(url)
     data = r.json()
     param={  'city' : data['name'],
